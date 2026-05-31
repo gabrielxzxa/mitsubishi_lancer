@@ -1,559 +1,559 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --red: #E8192C;
-    --red-dark: #B01020;
-    --black: #0A0A0A;
-    --dark: #111111;
-    --surface: #1A1A1A;
-    --surface-2: #222222;
-    --border: rgba(255,255,255,0.08);
-    --text: #F0F0F0;
-    --muted: rgba(240,240,240,0.62);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 0%, rgba(232,25,44,0.12), transparent 34rem),
-        linear-gradient(180deg, var(--black), var(--dark));
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.65;
-    overflow-x: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: linear-gradient(to bottom, black, transparent 72%);
-}
-
-a {
-    color: inherit;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-header {
-    height: 72px;
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    min-height: 72px;
-    padding: 0 5vw;
-    background: rgba(10,10,10,0.9);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(14px);
-}
-
-nav h2,
-.nav-logo {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    line-height: 1;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-nav h2::after,
-.nav-logo::after {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 3px;
-    margin-top: 0.55rem;
-    background: var(--red);
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    list-style: none;
-}
-
-nav a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 40px;
-    padding: 0 0.85rem;
-    border-radius: 4px;
-    color: var(--muted);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s ease, background 0.2s ease;
-}
-
-nav a:hover,
-nav a.active {
-    color: #fff;
-    background: rgba(255,255,255,0.06);
-}
-
-nav a.active {
-    box-shadow: inset 0 -2px 0 var(--red);
-}
-
-section,
-.page {
-    position: relative;
-    width: min(1120px, calc(100% - 10vw));
-    margin: 0 auto;
-    padding: 5rem 0;
-}
-
-.hero {
-    width: 100%;
-    min-height: calc(100vh - 72px);
-    margin: 0;
-    padding: 0 5vw;
-    display: flex;
-    align-items: center;
-    background:
-        linear-gradient(90deg, rgba(10,10,10,0.92), rgba(10,10,10,0.45) 52%, rgba(10,10,10,0.85)),
-        linear-gradient(180deg, rgba(10,10,10,0.05), rgba(10,10,10,0.95)),
-        url("fundo_menu.png");
-    background-size: cover;
-    background-position: center;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    left: 5vw;
-    right: 5vw;
-    bottom: 0;
-    height: 1px;
-    background: linear-gradient(90deg, var(--red), transparent);
-}
-
-.hero-text,
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-}
-
-.hero h1,
-.hero-title,
-.section-title,
-section > h2 {
-    color: #fff;
-    font-weight: 900;
-    line-height: 0.98;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-.hero h1,
-.hero-title {
-    font-size: clamp(3rem, 8vw, 6.6rem);
-}
-
-.hero p,
-.hero-tag {
-    max-width: 620px;
-    margin: 1.35rem 0 2rem;
-    color: var(--muted);
-    font-size: clamp(1rem, 2vw, 1.45rem);
-}
-
-.hero-tag,
-.section-label,
-.timeline-year,
-.spec-label {
-    color: var(--red);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-}
-
-.hero-title em {
-    color: var(--red);
-    font-style: normal;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 0 1.35rem;
-    background: var(--red);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 4px;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-decoration: none;
-    text-transform: uppercase;
-    box-shadow: 0 18px 36px rgba(232,25,44,0.22);
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn:hover {
-    background: var(--red-dark);
-    transform: translateY(-2px);
-}
-
-.section-label {
-    margin-bottom: 0.85rem;
-}
-
-.section-title,
-section > h2 {
-    max-width: 760px;
-    margin-bottom: 2rem;
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
-}
-
-.historia-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
-    gap: 4rem;
-    align-items: start;
-}
-
-.historia-text p {
-    margin-bottom: 1.2rem;
-    color: rgba(240,240,240,0.74);
-}
-
-.historia-text strong,
-.timeline-desc strong {
-    color: #fff;
-}
-
-.historia-visual,
-.car-image-wrap,
-.gallery-item,
-.positivo,
-.negativo,
-#creditos p {
-    position: relative;
-    border: 1px solid var(--border);
-    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.car-image-wrap::before,
-.gallery-item::before,
-.positivo::before,
-.negativo::before,
-#creditos p::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--red);
-    z-index: 1;
-}
-
-.car-image-wrap img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    filter: saturate(1.08) contrast(1.05);
-}
-
-.car-year-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 2;
-    padding: 0.35rem 0.8rem;
-    background: var(--red);
-    color: #fff;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-}
-
-.corner-tl,
-.corner-br {
-    position: absolute;
-    z-index: 2;
-    width: 24px;
-    height: 24px;
-}
-
-.corner-tl {
-    top: 0;
-    left: 0;
-    border-top: 2px solid var(--red);
-    border-left: 2px solid var(--red);
-}
-
-.corner-br {
-    right: 0;
-    bottom: 0;
-    border-right: 2px solid var(--red);
-    border-bottom: 2px solid var(--red);
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin: 4rem 0;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-}
-
-.divider-icon {
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--red);
-    transform: rotate(45deg);
-}
-
-.timeline {
-    margin-top: 1rem;
-}
-
-.timeline-track {
-    border-left: 1px solid var(--border);
-    padding-left: 2rem;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.timeline-dot {
-    position: absolute;
-    top: 0.45rem;
-    left: -2.34rem;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--red);
-    box-shadow: 0 0 0 4px rgba(232,25,44,0.18);
-}
-
-.timeline-year {
-    margin-bottom: 0.25rem;
-}
-
-.timeline-desc {
-    color: rgba(240,240,240,0.7);
-}
-
-.specs-grid,
-.cards,
-.grid,
-#creditos {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.spec-card,
-.card,
-.positivo,
-.negativo,
-#creditos p {
-    min-height: 150px;
-    padding: 1.7rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-}
-
-.spec-card:hover,
-.card:hover,
-.positivo:hover,
-.negativo:hover,
-#creditos p:hover,
-.gallery-item:hover {
-    background: var(--surface-2);
-}
-
-.spec-icon {
-    margin-bottom: 0.8rem;
-    color: var(--muted);
-    font-size: 1.4rem;
-}
-
-.spec-value {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.spec-unit {
-    color: var(--red);
-    font-size: 0.9rem;
-}
-
-#impactos {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    align-items: stretch;
-}
-
-.positivo h2,
-.negativo h2 {
-    margin-bottom: 1rem;
-    color: #fff;
-    font-size: 1.35rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.positivo ul,
-.negativo ul {
-    display: grid;
-    gap: 0.7rem;
-    padding-left: 1.2rem;
-    color: rgba(240,240,240,0.72);
-}
-
-.grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.gallery-item {
-    aspect-ratio: 16 / 10;
-}
-
-.gallery-item img,
-.grid > img {
-    width: 100%;
-    height: 100%;
-    min-height: 260px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background:
-        linear-gradient(135deg, rgba(232,25,44,0.18), transparent),
-        var(--surface);
-}
-
-#creditos {
-    padding-top: 5rem;
-}
-
-#creditos h2 {
-    grid-column: 1 / -1;
-}
-
-#creditos p {
-    color: #fff;
-    font-size: 1.05rem;
-    font-weight: 700;
-}
-
-footer {
-    width: min(1120px, calc(100% - 10vw));
-    margin: 0 auto;
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    color: rgba(255,255,255,0.38);
-    text-align: center;
-}
-
-.footer-logo,
-footer h5 {
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.footer-copy {
-    display: block;
-    margin-top: 0.4rem;
-    font-size: 0.82rem;
-}
-
-@media (max-width: 820px) {
-    header {
-        height: auto;
-    }
-
-    nav {
-        position: static;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 5vw;
-    }
-
-    nav ul {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-    }
-
-    nav a {
-        min-height: 36px;
-        padding: 0 0.65rem;
-        font-size: 0.72rem;
-    }
-
-    .hero {
-        min-height: 72vh;
-    }
-
-    .historia-grid,
-    #impactos,
-    .specs-grid,
-    .cards,
-    .grid,
-    #creditos {
-        grid-template-columns: 1fr;
-    }
-
-    section,
-    .page {
-        width: min(100% - 2rem, 1120px);
-        padding: 3.5rem 0;
-    }
-}
+*, /* Seleciona todos os elementos da pagina. */
+*::before, /* Seleciona os pseudo-elementos before. */
+*::after { /* Seleciona os pseudo-elementos after e abre o reset global. */
+    margin: 0; /* Remove margens padrao dos navegadores. */
+    padding: 0; /* Remove espacamentos internos padrao. */
+    box-sizing: border-box; /* Faz width e height incluirem padding e borda. */
+} /* Fecha o reset global. */
+
+:root { /* Guarda variaveis globais de cores usadas no site. */
+    --red: #E8192C; /* Vermelho principal da identidade visual. */
+    --red-dark: #B01020; /* Vermelho mais escuro usado em hover. */
+    --black: #0A0A0A; /* Preto principal do fundo. */
+    --dark: #111111; /* Tom escuro secundario. */
+    --surface: #1A1A1A; /* Fundo dos cards e blocos. */
+    --surface-2: #222222; /* Fundo alternativo para hover. */
+    --border: rgba(255,255,255,0.08); /* Borda clara e discreta. */
+    --text: #F0F0F0; /* Cor principal dos textos. */
+    --muted: rgba(240,240,240,0.62); /* Cor de textos secundarios. */
+} /* Fecha as variaveis globais. */
+
+html { /* Aplica configuracoes ao documento inteiro. */
+    scroll-behavior: smooth; /* Deixa a rolagem suave em links internos. */
+} /* Fecha as configuracoes do html. */
+
+body { /* Estiliza o corpo visivel da pagina. */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela. */
+    background: /* Define camadas de fundo para profundidade visual. */
+        radial-gradient(circle at 20% 0%, rgba(232,25,44,0.12), transparent 34rem), /* Brilho vermelho discreto no topo. */
+        linear-gradient(180deg, var(--black), var(--dark)); /* Degrade escuro vertical. */
+    color: var(--text); /* Define a cor padrao dos textos. */
+    font-family: Arial, Helvetica, sans-serif; /* Define a familia de fontes do site. */
+    line-height: 1.65; /* Aumenta o espacamento entre linhas para leitura. */
+    overflow-x: hidden; /* Evita barra horizontal indesejada. */
+} /* Fecha o estilo do body. */
+
+body::before { /* Cria uma camada decorativa fixa no fundo. */
+    content: ""; /* Necessario para o pseudo-elemento aparecer. */
+    position: fixed; /* Mantem a camada presa na tela. */
+    inset: 0; /* Faz a camada ocupar toda a tela. */
+    pointer-events: none; /* Impede que a camada atrapalhe cliques. */
+    background-image: /* Cria uma grade discreta no fundo. */
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), /* Linhas horizontais da grade. */
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); /* Linhas verticais da grade. */
+    background-size: 56px 56px; /* Define o tamanho dos quadrados da grade. */
+    mask-image: linear-gradient(to bottom, black, transparent 72%); /* Faz a grade sumir gradualmente. */
+} /* Fecha a camada decorativa do body. */
+
+a { /* Estiliza todos os links. */
+    color: inherit; /* Faz os links herdarem a cor do elemento pai. */
+} /* Fecha a regra dos links. */
+
+img { /* Estiliza todas as imagens. */
+    display: block; /* Remove espaco extra abaixo de imagens inline. */
+    max-width: 100%; /* Impede imagens de ultrapassarem o container. */
+} /* Fecha a regra das imagens. */
+
+header { /* Estiliza o cabecalho. */
+    height: 72px; /* Reserva espaco para o menu fixo. */
+} /* Fecha a regra do cabecalho. */
+
+nav { /* Estiliza a barra de navegacao. */
+    position: fixed; /* Mantem o menu fixo no topo da tela. */
+    top: 0; /* Encosta o menu no topo. */
+    left: 0; /* Encosta o menu na esquerda. */
+    right: 0; /* Encosta o menu na direita. */
+    z-index: 1000; /* Garante que o menu fique acima do conteudo. */
+    display: flex; /* Coloca logo e links lado a lado. */
+    align-items: center; /* Centraliza os itens verticalmente. */
+    justify-content: space-between; /* Separa titulo e links. */
+    gap: 2rem; /* Define espaco minimo entre grupos do menu. */
+    min-height: 72px; /* Define altura minima do menu. */
+    padding: 0 5vw; /* Cria respiro lateral proporcional a tela. */
+    background: rgba(10,10,10,0.9); /* Fundo preto com leve transparencia. */
+    border-bottom: 1px solid var(--border); /* Linha fina abaixo do menu. */
+    backdrop-filter: blur(14px); /* Cria efeito de vidro/desfoque atras do menu. */
+} /* Fecha a regra da navegacao. */
+
+nav h2, /* Seleciona o titulo dentro do menu. */
+.nav-logo { /* Seleciona uma possivel logo em formato de link. */
+    color: #fff; /* Deixa a marca branca. */
+    font-size: 1rem; /* Define tamanho compacto para a marca. */
+    font-weight: 800; /* Deixa a marca bem forte. */
+    letter-spacing: 0.14em; /* Aumenta o espacamento entre letras. */
+    line-height: 1; /* Controla a altura da linha. */
+    text-decoration: none; /* Remove sublinhado se for link. */
+    text-transform: uppercase; /* Deixa o texto em maiusculas. */
+} /* Fecha a regra da marca. */
+
+nav h2::after, /* Cria detalhe depois do titulo do menu. */
+.nav-logo::after { /* Cria o mesmo detalhe depois da logo-link. */
+    content: ""; /* Necessario para exibir o detalhe. */
+    display: block; /* Faz o detalhe ocupar uma linha propria. */
+    width: 44px; /* Define a largura da barrinha vermelha. */
+    height: 3px; /* Define a altura da barrinha. */
+    margin-top: 0.55rem; /* Afasta a barrinha do texto. */
+    background: var(--red); /* Pinta a barrinha com vermelho principal. */
+} /* Fecha o detalhe da marca. */
+
+nav ul { /* Estiliza a lista de links do menu. */
+    display: flex; /* Coloca os links em linha. */
+    align-items: center; /* Centraliza os links verticalmente. */
+    gap: 0.4rem; /* Espaco entre links. */
+    list-style: none; /* Remove os marcadores da lista. */
+} /* Fecha a lista do menu. */
+
+nav a { /* Estiliza cada link do menu. */
+    display: inline-flex; /* Permite centralizar o texto do link. */
+    align-items: center; /* Centraliza o texto na altura do botao. */
+    min-height: 40px; /* Define area clicavel minima. */
+    padding: 0 0.85rem; /* Cria espaco interno lateral. */
+    border-radius: 4px; /* Arredonda levemente os cantos. */
+    color: var(--muted); /* Usa cor discreta para links inativos. */
+    font-size: 0.78rem; /* Define tamanho compacto para o menu. */
+    font-weight: 700; /* Deixa os links mais marcantes. */
+    letter-spacing: 0.12em; /* Aumenta o espacamento das letras. */
+    text-decoration: none; /* Remove sublinhado dos links. */
+    text-transform: uppercase; /* Deixa os links em maiusculas. */
+    transition: color 0.2s ease, background 0.2s ease; /* Suaviza hover e estado ativo. */
+} /* Fecha a regra dos links do menu. */
+
+nav a:hover, /* Seleciona link do menu ao passar o mouse. */
+nav a.active { /* Seleciona link da pagina atual. */
+    color: #fff; /* Deixa o link branco quando esta ativo ou em hover. */
+    background: rgba(255,255,255,0.06); /* Adiciona fundo sutil ao link destacado. */
+} /* Fecha hover e ativo dos links. */
+
+nav a.active { /* Estiliza somente o link da pagina atual. */
+    box-shadow: inset 0 -2px 0 var(--red); /* Cria linha vermelha interna embaixo. */
+} /* Fecha o estado ativo do menu. */
+
+section, /* Seleciona secoes principais. */
+.page { /* Seleciona containers com classe page. */
+    position: relative; /* Permite posicionar detalhes internos se necessario. */
+    width: min(1120px, calc(100% - 10vw)); /* Limita a largura e mantem margem lateral. */
+    margin: 0 auto; /* Centraliza o bloco na tela. */
+    padding: 5rem 0; /* Cria espaco vertical entre secoes. */
+} /* Fecha o layout padrao das secoes. */
+
+.hero { /* Estiliza a area principal de destaque. */
+    width: 100%; /* Faz o hero ocupar toda a largura. */
+    min-height: calc(100vh - 72px); /* Ocupa quase toda a altura da tela menos o menu. */
+    margin: 0; /* Remove margem para o hero encostar nas laterais. */
+    padding: 0 5vw; /* Cria respiro lateral no conteudo do hero. */
+    display: flex; /* Permite alinhar o conteudo internamente. */
+    align-items: center; /* Centraliza o texto verticalmente. */
+    background: /* Cria imagem de fundo com camadas de contraste. */
+        linear-gradient(90deg, rgba(10,10,10,0.92), rgba(10,10,10,0.45) 52%, rgba(10,10,10,0.85)), /* Escurece a imagem horizontalmente. */
+        linear-gradient(180deg, rgba(10,10,10,0.05), rgba(10,10,10,0.95)), /* Escurece a parte de baixo. */
+        url("fundo_menu.png"); /* Usa a imagem local como fundo. */
+    background-size: cover; /* Faz a imagem cobrir toda a area. */
+    background-position: center; /* Centraliza a imagem de fundo. */
+} /* Fecha a regra do hero. */
+
+.hero::after { /* Cria uma linha decorativa na base do hero. */
+    content: ""; /* Necessario para o pseudo-elemento aparecer. */
+    position: absolute; /* Posiciona a linha dentro do hero. */
+    left: 5vw; /* Afasta a linha da esquerda. */
+    right: 5vw; /* Afasta a linha da direita. */
+    bottom: 0; /* Coloca a linha no final do hero. */
+    height: 1px; /* Define uma linha bem fina. */
+    background: linear-gradient(90deg, var(--red), transparent); /* Faz a linha sair do vermelho para transparente. */
+} /* Fecha a linha decorativa do hero. */
+
+.hero-text, /* Seleciona o texto da home. */
+.hero-content { /* Seleciona o conteudo do hero da historia. */
+    position: relative; /* Garante que o conteudo fique acima do fundo. */
+    z-index: 1; /* Coloca o texto acima de detalhes decorativos. */
+    max-width: 760px; /* Limita a largura para melhorar leitura. */
+} /* Fecha o bloco de texto do hero. */
+
+.hero h1, /* Seleciona h1 dentro do hero. */
+.hero-title, /* Seleciona titulo especial do hero. */
+.section-title, /* Seleciona titulos de secao. */
+section > h2 { /* Seleciona h2 direto dentro de uma secao. */
+    color: #fff; /* Deixa titulos em branco. */
+    font-weight: 900; /* Deixa titulos bem fortes. */
+    line-height: 0.98; /* Aproxima linhas de titulos grandes. */
+    letter-spacing: 0.04em; /* Da um estilo mais tecnico ao texto. */
+    text-transform: uppercase; /* Deixa titulos em maiusculas. */
+} /* Fecha a regra geral de titulos. */
+
+.hero h1, /* Seleciona o titulo principal da home. */
+.hero-title { /* Seleciona o titulo principal da pagina historia. */
+    font-size: clamp(3rem, 8vw, 6.6rem); /* Ajusta o tamanho entre minimo, responsivo e maximo. */
+} /* Fecha o tamanho dos titulos do hero. */
+
+.hero p, /* Seleciona paragrafos dentro do hero. */
+.hero-tag { /* Seleciona o rotulo pequeno do hero. */
+    max-width: 620px; /* Limita a largura do texto. */
+    margin: 1.35rem 0 2rem; /* Define espaco acima e abaixo do texto. */
+    color: var(--muted); /* Usa cor secundaria para descricao. */
+    font-size: clamp(1rem, 2vw, 1.45rem); /* Ajusta o tamanho do texto conforme a tela. */
+} /* Fecha textos do hero. */
+
+.hero-tag, /* Seleciona rotulo do hero. */
+.section-label, /* Seleciona rotulos de secao. */
+.timeline-year, /* Seleciona ano da timeline. */
+.spec-label { /* Seleciona labels dos cards tecnicos. */
+    color: var(--red); /* Usa vermelho para pequenas informacoes de destaque. */
+    font-size: 0.76rem; /* Define texto pequeno. */
+    font-weight: 800; /* Deixa o texto forte. */
+    letter-spacing: 0.24em; /* Espaca bastante as letras. */
+    text-transform: uppercase; /* Deixa em maiusculas. */
+} /* Fecha rotulos pequenos. */
+
+.hero-title em { /* Estiliza a palavra destacada dentro do titulo. */
+    color: var(--red); /* Pinta a palavra com vermelho. */
+    font-style: normal; /* Remove o italico padrao da tag em. */
+} /* Fecha o destaque do titulo. */
+
+.btn { /* Estiliza botoes e links com aparencia de botao. */
+    display: inline-flex; /* Permite centralizar o texto do botao. */
+    align-items: center; /* Centraliza verticalmente. */
+    justify-content: center; /* Centraliza horizontalmente. */
+    min-height: 48px; /* Define altura minima clicavel. */
+    padding: 0 1.35rem; /* Cria espaco lateral interno. */
+    background: var(--red); /* Usa vermelho como cor do botao. */
+    color: #fff; /* Deixa o texto branco. */
+    border: 1px solid rgba(255,255,255,0.12); /* Adiciona borda sutil. */
+    border-radius: 4px; /* Arredonda levemente os cantos. */
+    font-size: 0.82rem; /* Define tamanho do texto do botao. */
+    font-weight: 800; /* Deixa o texto mais forte. */
+    letter-spacing: 0.12em; /* Espaca as letras. */
+    text-decoration: none; /* Remove sublinhado do link. */
+    text-transform: uppercase; /* Deixa o texto em maiusculas. */
+    box-shadow: 0 18px 36px rgba(232,25,44,0.22); /* Cria sombra vermelha discreta. */
+    transition: transform 0.2s ease, background 0.2s ease; /* Suaviza movimento e cor no hover. */
+} /* Fecha o estilo do botao. */
+
+.btn:hover { /* Estiliza o botao quando o mouse passa por cima. */
+    background: var(--red-dark); /* Escurece o vermelho no hover. */
+    transform: translateY(-2px); /* Move o botao um pouco para cima. */
+} /* Fecha o hover do botao. */
+
+.section-label { /* Estiliza rotulos pequenos de secao. */
+    margin-bottom: 0.85rem; /* Afasta o rotulo do titulo abaixo. */
+} /* Fecha rotulos de secao. */
+
+.section-title, /* Seleciona titulos com classe section-title. */
+section > h2 { /* Seleciona h2 direto dentro de secoes. */
+    max-width: 760px; /* Limita a largura dos titulos. */
+    margin-bottom: 2rem; /* Cria espaco abaixo do titulo. */
+    font-size: clamp(2rem, 4.5vw, 3.25rem); /* Tamanho responsivo para titulos de secao. */
+} /* Fecha titulos de secao. */
+
+.historia-grid { /* Organiza texto e imagem da pagina historia. */
+    display: grid; /* Usa CSS Grid para criar colunas. */
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr); /* Define coluna de texto maior e imagem menor. */
+    gap: 4rem; /* Cria espaco entre as colunas. */
+    align-items: start; /* Alinha os itens pelo topo. */
+} /* Fecha a grade da historia. */
+
+.historia-text p { /* Estiliza paragrafos da historia. */
+    margin-bottom: 1.2rem; /* Cria espaco entre paragrafos. */
+    color: rgba(240,240,240,0.74); /* Usa branco com transparencia para leitura confortavel. */
+} /* Fecha paragrafos da historia. */
+
+.historia-text strong, /* Seleciona textos fortes na historia. */
+.timeline-desc strong { /* Seleciona textos fortes na timeline. */
+    color: #fff; /* Deixa palavras fortes em branco puro. */
+} /* Fecha destaques de texto. */
+
+.historia-visual, /* Seleciona area visual da historia. */
+.car-image-wrap, /* Seleciona moldura da imagem do carro. */
+.gallery-item, /* Seleciona item da galeria. */
+.positivo, /* Seleciona card positivo. */
+.negativo, /* Seleciona card negativo. */
+#creditos p { /* Seleciona cards de nomes nos creditos. */
+    position: relative; /* Permite adicionar detalhes internos posicionados. */
+    border: 1px solid var(--border); /* Adiciona borda sutil. */
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); /* Fundo levemente iluminado. */
+    border-radius: 6px; /* Arredonda cantos dos cards. */
+    overflow: hidden; /* Esconde detalhes que ultrapassem o card. */
+} /* Fecha estilo base de cards visuais. */
+
+.car-image-wrap::before, /* Cria detalhe vermelho na imagem do carro. */
+.gallery-item::before, /* Cria detalhe vermelho nos itens da galeria. */
+.positivo::before, /* Cria detalhe vermelho no card positivo. */
+.negativo::before, /* Cria detalhe vermelho no card negativo. */
+#creditos p::before { /* Cria detalhe vermelho nos cards de creditos. */
+    content: ""; /* Necessario para exibir o pseudo-elemento. */
+    position: absolute; /* Posiciona o detalhe dentro do card. */
+    left: 0; /* Encosta o detalhe na esquerda. */
+    top: 0; /* Encosta o detalhe no topo. */
+    width: 4px; /* Define largura da barra vermelha. */
+    height: 100%; /* Faz a barra ocupar toda a altura do card. */
+    background: var(--red); /* Pinta a barra de vermelho. */
+    z-index: 1; /* Garante que a barra apareca acima do fundo. */
+} /* Fecha os detalhes vermelhos dos cards. */
+
+.car-image-wrap img { /* Estiliza a imagem do carro na historia. */
+    width: 100%; /* Faz a imagem ocupar toda a largura do card. */
+    height: 320px; /* Define altura fixa para manter proporcao visual. */
+    object-fit: cover; /* Corta a imagem sem deformar. */
+    filter: saturate(1.08) contrast(1.05); /* Aumenta levemente cor e contraste. */
+} /* Fecha a imagem da historia. */
+
+.car-year-badge { /* Estiliza o selo do ano. */
+    position: absolute; /* Posiciona o selo sobre a imagem. */
+    top: 1rem; /* Afasta do topo. */
+    right: 1rem; /* Afasta da direita. */
+    z-index: 2; /* Coloca o selo acima da imagem. */
+    padding: 0.35rem 0.8rem; /* Cria espaco interno no selo. */
+    background: var(--red); /* Fundo vermelho para destaque. */
+    color: #fff; /* Texto branco. */
+    font-weight: 900; /* Texto bem forte. */
+    letter-spacing: 0.1em; /* Espacamento entre letras. */
+} /* Fecha o selo do ano. */
+
+.corner-tl, /* Seleciona o detalhe do canto superior esquerdo. */
+.corner-br { /* Seleciona o detalhe do canto inferior direito. */
+    position: absolute; /* Permite posicionar nos cantos. */
+    z-index: 2; /* Coloca detalhes acima da imagem. */
+    width: 24px; /* Define largura do detalhe. */
+    height: 24px; /* Define altura do detalhe. */
+} /* Fecha detalhes de canto. */
+
+.corner-tl { /* Estiliza o canto superior esquerdo. */
+    top: 0; /* Encosta no topo. */
+    left: 0; /* Encosta na esquerda. */
+    border-top: 2px solid var(--red); /* Linha superior vermelha. */
+    border-left: 2px solid var(--red); /* Linha esquerda vermelha. */
+} /* Fecha o canto superior esquerdo. */
+
+.corner-br { /* Estiliza o canto inferior direito. */
+    right: 0; /* Encosta na direita. */
+    bottom: 0; /* Encosta embaixo. */
+    border-right: 2px solid var(--red); /* Linha direita vermelha. */
+    border-bottom: 2px solid var(--red); /* Linha inferior vermelha. */
+} /* Fecha o canto inferior direito. */
+
+.divider { /* Estiliza divisores entre blocos. */
+    display: flex; /* Coloca linhas e icone na mesma linha. */
+    align-items: center; /* Centraliza verticalmente. */
+    gap: 1.5rem; /* Espaco entre linhas e icone. */
+    margin: 4rem 0; /* Espaco vertical ao redor do divisor. */
+} /* Fecha o divisor. */
+
+.divider::before, /* Cria linha antes do icone. */
+.divider::after { /* Cria linha depois do icone. */
+    content: ""; /* Necessario para exibir as linhas. */
+    flex: 1; /* Faz as linhas ocuparem o espaco disponivel. */
+    height: 1px; /* Define linhas finas. */
+    background: var(--border); /* Usa cor discreta de borda. */
+} /* Fecha linhas do divisor. */
+
+.divider-icon { /* Estiliza o icone central do divisor. */
+    width: 32px; /* Define largura do quadrado. */
+    height: 32px; /* Define altura do quadrado. */
+    border: 1px solid var(--red); /* Borda vermelha do quadrado. */
+    transform: rotate(45deg); /* Gira o quadrado para virar losango. */
+} /* Fecha icone do divisor. */
+
+.timeline { /* Estiliza a area da linha do tempo. */
+    margin-top: 1rem; /* Cria pequeno espaco acima da timeline. */
+} /* Fecha area da timeline. */
+
+.timeline-track { /* Estiliza o trilho vertical da timeline. */
+    border-left: 1px solid var(--border); /* Cria a linha vertical. */
+    padding-left: 2rem; /* Afasta os textos da linha. */
+} /* Fecha o trilho da timeline. */
+
+.timeline-item { /* Estiliza cada evento da timeline. */
+    position: relative; /* Permite posicionar o ponto do evento. */
+    margin-bottom: 2rem; /* Cria espaco entre eventos. */
+} /* Fecha item da timeline. */
+
+.timeline-dot { /* Estiliza o ponto de cada evento. */
+    position: absolute; /* Posiciona o ponto sobre a linha vertical. */
+    top: 0.45rem; /* Alinha o ponto com o texto. */
+    left: -2.34rem; /* Move o ponto para cima da linha da timeline. */
+    width: 10px; /* Define largura do ponto. */
+    height: 10px; /* Define altura do ponto. */
+    border-radius: 50%; /* Deixa o ponto redondo. */
+    background: var(--red); /* Pinta o ponto de vermelho. */
+    box-shadow: 0 0 0 4px rgba(232,25,44,0.18); /* Cria brilho ao redor do ponto. */
+} /* Fecha ponto da timeline. */
+
+.timeline-year { /* Estiliza o ano de cada evento. */
+    margin-bottom: 0.25rem; /* Afasta o ano da descricao. */
+} /* Fecha ano da timeline. */
+
+.timeline-desc { /* Estiliza a descricao de cada evento. */
+    color: rgba(240,240,240,0.7); /* Usa branco com transparencia para texto secundario. */
+} /* Fecha descricao da timeline. */
+
+.specs-grid, /* Seleciona grade das especificacoes. */
+.cards, /* Seleciona grades antigas de cards, caso existam. */
+.grid, /* Seleciona a grade da galeria. */
+#creditos { /* Seleciona a secao de creditos como grade. */
+    display: grid; /* Usa CSS Grid para organizar os itens. */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Cria tres colunas iguais. */
+    gap: 1rem; /* Espaco entre os itens da grade. */
+} /* Fecha grades principais. */
+
+.spec-card, /* Seleciona cards de especificacao. */
+.card, /* Seleciona cards genericos. */
+.positivo, /* Seleciona card positivo. */
+.negativo, /* Seleciona card negativo. */
+#creditos p { /* Seleciona cada nome na pagina creditos. */
+    min-height: 150px; /* Define altura minima para cards consistentes. */
+    padding: 1.7rem; /* Cria espaco interno nos cards. */
+    background: var(--surface); /* Usa fundo escuro de superficie. */
+    border: 1px solid var(--border); /* Adiciona borda discreta. */
+    border-radius: 6px; /* Arredonda levemente os cantos. */
+} /* Fecha o estilo base dos cards. */
+
+.spec-card:hover, /* Seleciona card tecnico no hover. */
+.card:hover, /* Seleciona card generico no hover. */
+.positivo:hover, /* Seleciona card positivo no hover. */
+.negativo:hover, /* Seleciona card negativo no hover. */
+#creditos p:hover, /* Seleciona card de credito no hover. */
+.gallery-item:hover { /* Seleciona item da galeria no hover. */
+    background: var(--surface-2); /* Clareia levemente o fundo ao passar o mouse. */
+} /* Fecha o hover dos cards. */
+
+.spec-icon { /* Estiliza icones dos cards tecnicos. */
+    margin-bottom: 0.8rem; /* Afasta o icone do texto abaixo. */
+    color: var(--muted); /* Usa cor discreta no icone. */
+    font-size: 1.4rem; /* Define tamanho do icone. */
+} /* Fecha icones de especificacao. */
+
+.spec-value { /* Estiliza o valor principal dos cards tecnicos. */
+    color: #fff; /* Deixa o valor em branco. */
+    font-size: 2rem; /* Aumenta o tamanho do valor. */
+    font-weight: 900; /* Deixa o valor bem forte. */
+    line-height: 1; /* Controla a altura da linha. */
+} /* Fecha valores de especificacao. */
+
+.spec-unit { /* Estiliza unidades dentro dos valores. */
+    color: var(--red); /* Pinta a unidade de vermelho. */
+    font-size: 0.9rem; /* Deixa a unidade menor que o valor. */
+} /* Fecha unidade de especificacao. */
+
+#impactos { /* Estiliza a secao de impactos. */
+    display: grid; /* Organiza os cards em grade. */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Cria duas colunas iguais. */
+    gap: 1rem; /* Espaco entre cards positivos e negativos. */
+    align-items: stretch; /* Faz os cards preencherem a altura disponivel. */
+} /* Fecha a secao de impactos. */
+
+.positivo h2, /* Seleciona titulo do card positivo. */
+.negativo h2 { /* Seleciona titulo do card negativo. */
+    margin-bottom: 1rem; /* Afasta o titulo da lista. */
+    color: #fff; /* Deixa o titulo branco. */
+    font-size: 1.35rem; /* Define tamanho do titulo do card. */
+    letter-spacing: 0.08em; /* Espaca letras do titulo. */
+    text-transform: uppercase; /* Deixa o titulo em maiusculas. */
+} /* Fecha titulos dos impactos. */
+
+.positivo ul, /* Seleciona lista do card positivo. */
+.negativo ul { /* Seleciona lista do card negativo. */
+    display: grid; /* Organiza os itens da lista com espacamento uniforme. */
+    gap: 0.7rem; /* Espaco entre os itens. */
+    padding-left: 1.2rem; /* Mantem espaco para os marcadores da lista. */
+    color: rgba(240,240,240,0.72); /* Usa cor secundaria para os itens. */
+} /* Fecha listas dos impactos. */
+
+.grid { /* Estiliza a grade da galeria. */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Troca para duas colunas na galeria. */
+} /* Fecha grade da galeria. */
+
+.gallery-item { /* Estiliza cada item da galeria. */
+    aspect-ratio: 16 / 10; /* Mantem proporcao visual padronizada. */
+} /* Fecha item da galeria. */
+
+.gallery-item img, /* Seleciona imagens dentro de itens da galeria. */
+.grid > img { /* Seleciona imagens diretas dentro da grade, caso existam. */
+    width: 100%; /* Imagem ocupa toda a largura do item. */
+    height: 100%; /* Imagem ocupa toda a altura do item. */
+    min-height: 260px; /* Garante altura minima para imagens. */
+    object-fit: cover; /* Corta a imagem sem deformar. */
+    border-radius: 6px; /* Arredonda os cantos da imagem. */
+    border: 1px solid var(--border); /* Adiciona borda sutil na imagem. */
+    background: /* Define fundo para caso a imagem demore ou falhe. */
+        linear-gradient(135deg, rgba(232,25,44,0.18), transparent), /* Brilho vermelho diagonal. */
+        var(--surface); /* Fundo escuro base. */
+} /* Fecha imagens da galeria. */
+
+#creditos { /* Estiliza a secao de creditos. */
+    padding-top: 5rem; /* Cria espaco acima da secao. */
+} /* Fecha secao de creditos. */
+
+#creditos h2 { /* Estiliza o titulo dentro da secao de creditos. */
+    grid-column: 1 / -1; /* Faz o titulo ocupar todas as colunas da grade. */
+} /* Fecha titulo de creditos. */
+
+#creditos p { /* Estiliza cada nome nos creditos. */
+    color: #fff; /* Deixa nomes em branco. */
+    font-size: 1.05rem; /* Define tamanho dos nomes. */
+    font-weight: 700; /* Deixa os nomes em negrito. */
+} /* Fecha nomes dos creditos. */
+
+footer { /* Estiliza o rodape. */
+    width: min(1120px, calc(100% - 10vw)); /* Limita largura do rodape como as secoes. */
+    margin: 0 auto; /* Centraliza o rodape. */
+    padding: 2rem 0; /* Cria espaco interno vertical. */
+    border-top: 1px solid var(--border); /* Linha superior separando o rodape. */
+    color: rgba(255,255,255,0.38); /* Cor discreta para texto do rodape. */
+    text-align: center; /* Centraliza o texto. */
+} /* Fecha rodape. */
+
+.footer-logo, /* Seleciona o nome do projeto no rodape. */
+footer h5 { /* Seleciona h5 dentro do rodape. */
+    font-size: 0.82rem; /* Define tamanho pequeno. */
+    font-weight: 800; /* Deixa o texto forte. */
+    letter-spacing: 0.12em; /* Espaca letras. */
+    text-transform: uppercase; /* Deixa em maiusculas. */
+} /* Fecha textos principais do rodape. */
+
+.footer-copy { /* Estiliza texto secundario do rodape. */
+    display: block; /* Faz o texto ocupar uma linha propria. */
+    margin-top: 0.4rem; /* Afasta do texto acima. */
+    font-size: 0.82rem; /* Define tamanho do texto secundario. */
+} /* Fecha texto secundario do rodape. */
+
+@media (max-width: 820px) { /* Aplica regras especiais em telas de ate 820px. */
+    header { /* Ajusta o cabecalho no mobile. */
+        height: auto; /* Deixa a altura crescer conforme o menu quebra linhas. */
+    } /* Fecha cabecalho mobile. */
+
+    nav { /* Ajusta o menu no mobile. */
+        position: static; /* Remove fixacao para o menu ocupar fluxo normal. */
+        flex-direction: column; /* Empilha marca e links. */
+        align-items: flex-start; /* Alinha tudo pela esquerda. */
+        padding: 1rem 5vw; /* Reduz e organiza o espaco interno. */
+    } /* Fecha menu mobile. */
+
+    nav ul { /* Ajusta a lista do menu no mobile. */
+        width: 100%; /* Faz a lista ocupar a largura toda. */
+        flex-wrap: wrap; /* Permite que os links quebrem linha. */
+        gap: 0.25rem; /* Reduz o espaco entre links. */
+    } /* Fecha lista do menu mobile. */
+
+    nav a { /* Ajusta os links do menu no mobile. */
+        min-height: 36px; /* Reduz a altura minima dos links. */
+        padding: 0 0.65rem; /* Reduz o espaco lateral. */
+        font-size: 0.72rem; /* Diminui o texto para caber melhor. */
+    } /* Fecha links mobile. */
+
+    .hero { /* Ajusta o destaque principal no mobile. */
+        min-height: 72vh; /* Reduz a altura do hero em telas menores. */
+    } /* Fecha hero mobile. */
+
+    .historia-grid, /* Ajusta grade da historia no mobile. */
+    #impactos, /* Ajusta impactos no mobile. */
+    .specs-grid, /* Ajusta especificacoes no mobile. */
+    .cards, /* Ajusta cards genericos no mobile. */
+    .grid, /* Ajusta galeria no mobile. */
+    #creditos { /* Ajusta creditos no mobile. */
+        grid-template-columns: 1fr; /* Usa apenas uma coluna em telas pequenas. */
+    } /* Fecha grades mobile. */
+
+    section, /* Ajusta secoes no mobile. */
+    .page { /* Ajusta container page no mobile. */
+        width: min(100% - 2rem, 1120px); /* Usa margens menores em telas pequenas. */
+        padding: 3.5rem 0; /* Reduz o espaco vertical das secoes. */
+    } /* Fecha secoes mobile. */
+} /* Fecha as regras responsivas. */

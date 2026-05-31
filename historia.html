@@ -1,116 +1,222 @@
 <!DOCTYPE html>
+<!-- Define que este documento usa a versao HTML5. -->
 <html lang="pt-BR">
+<!-- Inicia o documento e informa que o idioma principal e portugues do Brasil. -->
 <head>
+    <!-- Area com configuracoes que o navegador le antes de mostrar a pagina. -->
     <meta charset="UTF-8">
+    <!-- Permite que acentos e caracteres especiais sejam exibidos corretamente. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz a pagina se ajustar melhor ao tamanho da tela do dispositivo. -->
     <title>Hist&oacute;ria &mdash; Mitsubishi Lancer</title>
+    <!-- Define o titulo que aparece na aba do navegador. -->
     <link rel="stylesheet" href="style.css">
+    <!-- Importa o arquivo CSS que controla o visual da pagina. -->
 </head>
+<!-- Fecha a area de configuracoes. -->
 <body>
+    <!-- Inicia o conteudo visivel da pagina. -->
     <header>
+        <!-- Cria o cabecalho do site. -->
         <nav>
+            <!-- Cria a barra de navegacao com titulo e links. -->
             <h2>Mitsubishi Lancer</h2>
+            <!-- Nome do site exibido no menu. -->
             <ul>
+                <!-- Lista de links de navegacao. -->
                 <li><a href="index.html">Home</a></li>
+                <!-- Link para a pagina inicial. -->
                 <li><a href="historia.html" class="active">Sobre</a></li>
+                <!-- Link para esta pagina; active destaca a pagina atual. -->
                 <li><a href="Impactos.html">Impactos</a></li>
+                <!-- Link para a pagina de impactos. -->
                 <li><a href="Galeria.html">Galeria</a></li>
+                <!-- Link para a pagina da galeria. -->
                 <li><a href="creditos.html">Cr&eacute;ditos</a></li>
+                <!-- Link para a pagina de creditos. -->
             </ul>
+            <!-- Fecha a lista de links do menu. -->
         </nav>
+        <!-- Fecha a barra de navegacao. -->
     </header>
+    <!-- Fecha o cabecalho. -->
 
     <section class="hero">
+        <!-- Secao de destaque visual da pagina de historia. -->
         <div class="hero-content">
+            <!-- Agrupa o texto que aparece dentro do destaque. -->
             <p class="hero-tag">Origem &amp; Legado</p>
+            <!-- Texto pequeno acima do titulo principal. -->
             <h1 class="hero-title">A <em>hist&oacute;ria</em><br>do Lancer</h1>
+            <!-- Titulo principal; em destaca uma palavra e br quebra a linha. -->
         </div>
+        <!-- Fecha o conteudo do destaque. -->
     </section>
+    <!-- Fecha a secao de destaque. -->
 
     <main class="page">
+        <!-- Define o conteudo principal com largura limitada pelo CSS. -->
         <div class="historia-grid">
+            <!-- Cria uma grade com texto de um lado e imagem do outro. -->
             <div class="historia-text">
+                <!-- Agrupa os textos da historia. -->
                 <p class="section-label">Desde 1973</p>
+                <!-- Pequeno rotulo visual da secao. -->
                 <h2 class="section-title">Uma lenda<br>esportiva</h2>
+                <!-- Titulo da secao com quebra de linha. -->
                 <p>O <strong>Mitsubishi Lancer</strong> surgiu em 1973 como um sed&atilde; compacto de esp&iacute;rito esportivo. Em poucas d&eacute;cadas, tornou-se um dos autom&oacute;veis mais respeitados do cen&aacute;rio automotivo global.</p>
+                <!-- Primeiro paragrafo explicando a origem do carro. -->
                 <p>Sua trajet&oacute;ria &eacute; marcada por <strong>vit&oacute;rias no Rally Mundial</strong>, evolu&ccedil;&otilde;es tecnol&oacute;gicas constantes e um design que sempre equilibrou agressividade e eleg&acirc;ncia. Do Lancer original ao ic&ocirc;nico <strong>Evolution</strong>, cada gera&ccedil;&atilde;o elevou o padr&atilde;o.</p>
+                <!-- Segundo paragrafo falando sobre rally, tecnologia e design. -->
                 <p>Mais do que um carro, o Lancer representa uma filosofia: <strong>performance acess&iacute;vel</strong>, sem abrir m&atilde;o de car&aacute;ter e personalidade.</p>
+                <!-- Terceiro paragrafo resumindo o significado do Lancer. -->
             </div>
+            <!-- Fecha o bloco de texto da historia. -->
 
             <div class="historia-visual">
+                <!-- Agrupa a parte visual da secao. -->
                 <div class="car-image-wrap">
+                    <!-- Moldura usada para controlar a imagem e os detalhes visuais. -->
                     <div class="corner-tl"></div>
+                    <!-- Detalhe decorativo no canto superior esquerdo. -->
                     <div class="corner-br"></div>
+                    <!-- Detalhe decorativo no canto inferior direito. -->
                     <span class="car-year-badge">1973</span>
+                    <!-- Selo com o ano inicial da historia do modelo. -->
                     <img src="roxo.jpg" alt="Mitsubishi Lancer roxo">
+                    <!-- Imagem do carro com texto alternativo para acessibilidade. -->
                 </div>
+                <!-- Fecha a moldura da imagem. -->
             </div>
+            <!-- Fecha o bloco visual da historia. -->
         </div>
+        <!-- Fecha a grade da secao de historia. -->
 
         <div class="divider"><div class="divider-icon"></div></div>
+        <!-- Divisor visual que separa uma parte da pagina da outra. -->
 
         <div class="timeline">
+            <!-- Area da linha do tempo. -->
             <p class="section-label">Cronologia</p>
+            <!-- Rotulo pequeno da secao de cronologia. -->
             <h2 class="section-title">Marco a marco</h2>
+            <!-- Titulo da linha do tempo. -->
 
             <div class="timeline-track">
+                <!-- Linha vertical que organiza os eventos. -->
                 <div class="timeline-item">
+                    <!-- Primeiro evento da linha do tempo. -->
                     <div class="timeline-dot"></div>
+                    <!-- Ponto visual ligado a este evento. -->
                     <p class="timeline-year">1973</p>
+                    <!-- Ano do primeiro evento. -->
                     <p class="timeline-desc">Lan&ccedil;amento do Mitsubishi Lancer de primeira gera&ccedil;&atilde;o, um sed&atilde; compacto com motor 1.2L e 1.4L &mdash; &aacute;gil e eficiente para a &eacute;poca.</p>
+                    <!-- Descricao do primeiro evento. -->
                 </div>
+                <!-- Fecha o primeiro evento. -->
                 <div class="timeline-item">
+                    <!-- Segundo evento da linha do tempo. -->
                     <div class="timeline-dot"></div>
+                    <!-- Ponto visual do segundo evento. -->
                     <p class="timeline-year">1992</p>
+                    <!-- Ano do segundo evento. -->
                     <p class="timeline-desc">Nasce o <strong>Lancer Evolution I</strong>, equipado com motor turbo 4G63 de 2.0L e tra&ccedil;&atilde;o integral. Uma resposta direta ao mercado de rali.</p>
+                    <!-- Descricao do segundo evento. -->
                 </div>
+                <!-- Fecha o segundo evento. -->
                 <div class="timeline-item">
+                    <!-- Terceiro evento da linha do tempo. -->
                     <div class="timeline-dot"></div>
+                    <!-- Ponto visual do terceiro evento. -->
                     <p class="timeline-year">1997 &ndash; 2010</p>
+                    <!-- Periodo do terceiro evento. -->
                     <p class="timeline-desc">O Evo domina o Campeonato Mundial de Rali com 4 t&iacute;tulos consecutivos de construtores, consolidando a reputa&ccedil;&atilde;o de performance extrema da Mitsubishi.</p>
+                    <!-- Descricao do terceiro evento. -->
                 </div>
+                <!-- Fecha o terceiro evento. -->
                 <div class="timeline-item">
+                    <!-- Quarto evento da linha do tempo. -->
                     <div class="timeline-dot"></div>
+                    <!-- Ponto visual do quarto evento. -->
                     <p class="timeline-year">2007</p>
+                    <!-- Ano do quarto evento. -->
                     <p class="timeline-desc">D&eacute;cima gera&ccedil;&atilde;o do Lancer: design ousado com a grade "jet fighter" e vers&atilde;o Ralliart que trouxe o DNA Evolution para o dia a dia.</p>
+                    <!-- Descricao do quarto evento. -->
                 </div>
+                <!-- Fecha o quarto evento. -->
                 <div class="timeline-item">
+                    <!-- Quinto evento da linha do tempo. -->
                     <div class="timeline-dot"></div>
+                    <!-- Ponto visual do quinto evento. -->
                     <p class="timeline-year">2016</p>
+                    <!-- Ano do quinto evento. -->
                     <p class="timeline-desc">&Uacute;ltima gera&ccedil;&atilde;o produzida, encerrando um ciclo de mais de 40 anos de hist&oacute;ria. O legado permanece vivo nas pistas e no imagin&aacute;rio automotivo.</p>
+                    <!-- Descricao do quinto evento. -->
                 </div>
+                <!-- Fecha o quinto evento. -->
             </div>
+            <!-- Fecha a trilha da linha do tempo. -->
         </div>
+        <!-- Fecha a area de timeline. -->
 
         <div class="divider"><div class="divider-icon"></div></div>
+        <!-- Segundo divisor visual da pagina. -->
 
         <div class="specs-section">
+            <!-- Area das especificacoes tecnicas. -->
             <p class="section-label">Dados t&eacute;cnicos</p>
+            <!-- Rotulo pequeno da secao tecnica. -->
             <h2 class="section-title">Especifica&ccedil;&otilde;es</h2>
+            <!-- Titulo da secao de especificacoes. -->
 
             <div class="specs-grid">
+                <!-- Grade que organiza os cards de especificacoes. -->
                 <div class="spec-card">
+                    <!-- Primeiro card de especificacao. -->
                     <div class="spec-icon">&#9881;&#65039;</div>
+                    <!-- Icone visual do motor. -->
                     <p class="spec-label">Motor</p>
+                    <!-- Nome da especificacao. -->
                     <p class="spec-value">2.0 <span class="spec-unit">16V</span></p>
+                    <!-- Valor da especificacao com unidade destacada. -->
                 </div>
+                <!-- Fecha o primeiro card. -->
                 <div class="spec-card">
+                    <!-- Segundo card de especificacao. -->
                     <div class="spec-icon">&#9889;</div>
+                    <!-- Icone visual de potencia. -->
                     <p class="spec-label">Pot&ecirc;ncia</p>
+                    <!-- Nome da segunda especificacao. -->
                     <p class="spec-value">160 <span class="spec-unit">cv</span></p>
+                    <!-- Valor da potencia com unidade. -->
                 </div>
+                <!-- Fecha o segundo card. -->
                 <div class="spec-card">
+                    <!-- Terceiro card de especificacao. -->
                     <div class="spec-icon">&#127950;&#65039;</div>
+                    <!-- Icone visual de velocidade. -->
                     <p class="spec-label">Velocidade m&aacute;x.</p>
+                    <!-- Nome da terceira especificacao. -->
                     <p class="spec-value">200 <span class="spec-unit">km/h</span></p>
+                    <!-- Valor da velocidade maxima com unidade. -->
                 </div>
+                <!-- Fecha o terceiro card. -->
             </div>
+            <!-- Fecha a grade de especificacoes. -->
         </div>
+        <!-- Fecha a secao de especificacoes. -->
     </main>
+    <!-- Fecha o conteudo principal. -->
 
     <footer>
+        <!-- Rodape da pagina. -->
         <span class="footer-logo">Mitsubishi Lancer</span>
+        <!-- Nome do projeto no rodape. -->
         <span class="footer-copy">Projeto acad&ecirc;mico &mdash; todos os direitos reservados</span>
+        <!-- Texto complementar do rodape. -->
     </footer>
+    <!-- Fecha o rodape. -->
 </body>
+<!-- Fecha o corpo visivel da pagina. -->
 </html>
+<!-- Fecha o documento HTML. -->

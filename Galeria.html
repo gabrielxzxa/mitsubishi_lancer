@@ -1,35 +1,69 @@
 <!DOCTYPE html>
+<!-- Define que o documento usa HTML5. -->
 <html lang="pt-br">
+<!-- Inicia a pagina e define o idioma como portugues do Brasil. -->
 <head>
+    <!-- Area de configuracoes da pagina. -->
     <meta charset="UTF-8">
+    <!-- Permite acentos e caracteres especiais. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz o layout se adaptar a celulares. -->
     <title>Galeria de fotos</title>
+    <!-- Texto exibido na aba do navegador. -->
     <link rel="stylesheet" href="style.css">
+    <!-- Carrega o CSS responsavel pelo design. -->
 </head>
+<!-- Fecha a area de configuracoes. -->
 <body>
+    <!-- Inicia o conteudo visivel. -->
     <header>
+        <!-- Cabecalho do site. -->
         <nav>
+            <!-- Menu principal de navegacao. -->
             <h2>Mitsubishi Lancer</h2>
+            <!-- Nome do site no menu. -->
             <ul>
+                <!-- Lista de links do menu. -->
                 <li><a href="index.html">Home</a></li>
+                <!-- Link para a pagina inicial. -->
                 <li><a href="historia.html">Sobre</a></li>
+                <!-- Link para a pagina sobre/historia. -->
                 <li><a href="Impactos.html">Impactos</a></li>
+                <!-- Link para a pagina de impactos. -->
                 <li><a href="Galeria.html" class="active">Galeria</a></li>
+                <!-- Link para esta pagina; active mostra que ela esta selecionada. -->
                 <li><a href="creditos.html">Cr&eacute;ditos</a></li>
+                <!-- Link para a pagina de creditos. -->
             </ul>
+            <!-- Fecha a lista de links. -->
         </nav>
+        <!-- Fecha o menu. -->
     </header>
+    <!-- Fecha o cabecalho. -->
 
     <main>
+        <!-- Conteudo principal da pagina. -->
         <section id="galeria">
+            <!-- Secao que agrupa as imagens da galeria. -->
             <h2>Galeria</h2>
+            <!-- Titulo da secao. -->
             <div class="grid">
+                <!-- Grade usada para organizar as imagens. -->
                 <div class="gallery-item"><img src="roxo.jpg" alt="Lancer"></div>
+                <!-- Primeiro item da galeria com imagem do Lancer. -->
                 <div class="gallery-item"><img src="fundo_menu.png" alt="Lancer"></div>
+                <!-- Segundo item da galeria com imagem de fundo do Lancer. -->
                 <div class="gallery-item"><img src="fundo_menu.png" alt="Lancer"></div>
+                <!-- Terceiro item da galeria com imagem de fundo do Lancer. -->
                 <div class="gallery-item"><img src="roxo.jpg" alt="Motor"></div>
+                <!-- Quarto item da galeria com imagem local e texto alternativo. -->
             </div>
+            <!-- Fecha a grade de imagens. -->
         </section>
+        <!-- Fecha a secao da galeria. -->
     </main>
+    <!-- Fecha o conteudo principal. -->
 </body>
+<!-- Fecha o corpo da pagina. -->
 </html>
+<!-- Fecha o documento HTML. -->
